@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="a little gift for you my best sister 💗💗">
-    <title>love you my sister</title>
+    <meta name="description" content="A little gift for you, my best sister 💗💗">
+    <title>Love You My Sister</title>
     <style>
         /* General Styles */
         body {
@@ -25,22 +25,6 @@
             margin: 0;
             font-size: 3rem;
         }
-        nav {
-            background-color: #4b5563;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-        }
-        nav a {
-            color: #e5e7eb;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s ease-in-out;
-        }
-        nav a:hover {
-            color: #60a5fa;
-        }
         .container {
             max-width: 1100px;
             margin: auto;
@@ -59,6 +43,7 @@
         h2 {
             color: #1e293b;
             margin-bottom: 10px;
+            text-align: center;
         }
         .profile-pic {
             text-align: center;
@@ -73,19 +58,6 @@
             box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
             animation: bounce 2s infinite;
         }
-        .skills ul {
-            list-style: none;
-            padding: 0;
-        }
-        .skills ul li {
-            background: #dbeafe;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            color: #1e3a8a;
-            font-weight: bold;
-        }
         .motivational {
             font-style: italic;
             color: #f63bb8;
@@ -94,28 +66,27 @@
             animation: fadeIn 2s ease-in-out forwards;
         }
         #sis {
-	    border-radius: 5cm;
-	    background-color: #ec29abdc;
-	    }
-        .social-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .social-links a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #1e293b;
-            background-color: #dbeafe;
+            border-radius: 50px;
+            background-color: #ec29abdc;
+            color: #fff;
             padding: 10px 20px;
-            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out, transform 0.2s;
         }
-        .social-links a:hover {
-            background-color: #60a5fa;
-            color: #ffffff;
+        #sis:hover {
+            background-color: #f63bb8de;
+            transform: scale(1.05);
+        }
+        .images-container img {
+            width: 90%;
+            max-width: 500px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
         }
 
         /* Animations */
@@ -138,48 +109,50 @@
             }
         }
 
-        /* Section-specific Animations */
-        section:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-        section:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        section:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-        section:nth-child(4) {
-            animation-delay: 0.4s;
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .profile-pic img {
+                width: 180px;
+                height: 180px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>For you</h1>
+        <h1>For You</h1>
         <p>The best person in my life and my best sister</p>
     </header>
 
     <div class="container">
+        <!-- Profile Picture Section -->
         <section id="home" class="profile-pic">
-            <img src="sis.jpg" alt="love you">
+            <img src="sis.jpg" alt="Profile picture of my sister">
             <p class="motivational">
-                "screenshots 💗✨"
+                "Screenshots 💗✨"
             </p>
         </section>
+
+        <!-- About Section -->
         <section id="about">
-            <h2>:-:</h2>
-	    <center><img src="./p1.jpg"></center>
-            <br>
-	    <br>
-            <center><img src="./p2.jpg"></center>
-            <br>
-	    <br>
-            <center><button id="sis" onclick="sis()">Click me 💗</button></center>
+            <h2>Precious Memories</h2>
+            <div class="images-container">
+                <img src="./p1.jpg" alt="Precious moment 1">
+                <img src="./p2.jpg" alt="Precious moment 2">
+            </div>
+            <center>
+                <button id="sis" onclick="sis()">Click me 💗</button>
+            </center>
+        </section>
     </div>
+
+    <script>
+        function sis() {
+            alert("bala loloallaaaaaaaaaaaaaaaalelelalaaaaaaaaaaaa 💖💖");
+        }
+    </script>
 </body>
-<script>
-function sis() {
-	alert("blolo lala alooolaaaaaaaaaaaaaaaalalaoalaaaaaaaaaaa")
-}
-</script>
 </html>
