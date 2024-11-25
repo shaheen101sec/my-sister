@@ -117,7 +117,45 @@
             background-color: #60a5fa;
             color: #ffffff;
         }
+.service-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .service-button a {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #ec29abdc;
+            padding: 15px 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out, transform 0.2s;
+        }
+        .service-button a:hover {
+            background-color: #ec29abdc;
+            transform: translateY(-5px);
+        }
 
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
         /* Animations */
         @keyframes fadeIn {
             0% {
@@ -165,6 +203,9 @@
             <p class="motivational">
                 "كلام بسيط كذا لك يا احلى واطيب واحن اخت في حياتي والدنيا كلها 💗✨"
             </p>
+            <div class="service-button">
+                <a href="scrn.html">screenshots 💗✨</a>
+            </div>
         </section>
         <section id="about">
             <h2>Read this:</h2>
