@@ -3,235 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="a little gift for you my best sister 💗💗">
-    <title>love you my sister</title>
+    <meta name="description" content="I will love you for the rest of my life.">
+    <title>Be Happy, My Sister</title>
     <style>
-        /* General Styles */
+        /* Global Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap');
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1, h3 {
             margin: 0;
             padding: 0;
-            background-color: #f3f4f6;
-            color: #374151;
-            overflow-x: hidden;
-        }
-        header {
-            background-color: #ec29abdc;
-            color: #f1f5f9;
             text-align: center;
-            padding: 30px 10px;
+            animation: fadeIn 2s ease-in-out;
         }
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
+
+        h1 {
+            font-size: 3.5rem;
+            font-family: 'Dancing Script', cursive;
+            color: #ff99cc;
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4);
         }
-        nav {
-            background-color: #4b5563;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
+
+        h3 {
+            font-size: 1.6rem;
+            color: #fbd3e9;
+            margin-top: 10px;
         }
-        nav a {
-            color: #e5e7eb;
-            text-decoration: none;
-            margin: 0 15px;
+
+        /* Button Styles */
+        button {
+            position: relative;
+            background: linear-gradient(135deg, #ff5f6d, #ffc371); /* Smooth gradient */
+            color: white;
+            font-size: 16px;
             font-weight: bold;
-            transition: color 0.3s ease-in-out;
-        }
-        nav a:hover {
-            color: #60a5fa;
-        }
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-        h2 {
-            color: #1e293b;
-            margin-bottom: 10px;
-        }
-        .profile-pic {
-            text-align: center;
-        }
-        .profile-pic img {
             width: 220px;
-            height: 220px;
+            height: 55px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(255, 95, 109, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 95, 109, 0.6);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Ripple Effect */
+        button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.5);
             border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 5px solid #f63bb8de;
-            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
-            animation: bounce 2s infinite;
-        }
-        .skills ul {
-            list-style: none;
-            padding: 0;
-        }
-        .skills ul li {
-            background: #dbeafe;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            color: #1e3a8a;
-            font-weight: bold;
-        }
-        .motivational {
-            font-style: italic;
-            color: #f63bb8;
-            text-align: center;
-            margin-top: 20px;
-            animation: fadeIn 2s ease-in-out forwards;
-        }
-        #sis {
-	    border-radius: 5cm;
-	    background-color: #ec29abdc;
-	    }
-        .social-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .social-links a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #1e293b;
-            background-color: #dbeafe;
-            padding: 10px 20px;
-            border-radius: 5px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-        }
-        .social-links a:hover {
-            background-color: #60a5fa;
-            color: #ffffff;
-        }
-.service-button {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .service-button a {
-            display: inline-block;
-            text-decoration: none;
-            font-weight: bold;
-            color: #ffffff;
-            background-color: #ec29abdc;
-            padding: 15px 30px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease-in-out, transform 0.2s;
-        }
-        .service-button a:hover {
-            background-color: #ec29abdc;
-            transform: translateY(-5px);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
         }
 
-        /* Animations */
+        button:active::after {
+            width: 300px;
+            height: 300px;
+            opacity: 0;
+            transition: width 0.8s ease, height 0.8s ease, opacity 0.8s ease;
+        }
+
+        /* Fade-in Animation */
         @keyframes fadeIn {
-            0% {
+            from {
                 opacity: 0;
-                transform: translateY(30px);
             }
-            100% {
+            to {
                 opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-        /* Animations */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
             }
         }
 
-        /* Section-specific Animations */
-        section:nth-child(1) {
-            animation-delay: 0.1s;
+                /* Starry Background */
+                .star {
+            position: absolute;
+            font-size: 15px;
+            animation: twinkle 2s infinite ease-in-out;
+            cursor: pointer;
         }
-        section:nth-child(2) {
-            animation-delay: 0.2s;
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
         }
-        section:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-        section:nth-child(4) {
-            animation-delay: 0.4s;
+
+        /* Footer Text */
+        .footer-text {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #f8bbd0;
+            animation: fadeIn 3s ease-in-out;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>For you</h1>
-        <p>The best person in my life and my best sister</p>
-    </header>
+    <h1>Ich bin liebe dich, mein Schwester</h1>
+    <h3>I hope you will love it ❤️</h3>
 
-    <div class="container">
-        <section id="home" class="profile-pic">
-            <img src="sis.jpg" alt="love you">
-            <p class="motivational">
-                "كلام بسيط كذا لك يا احلى واطيب واحن اخت في حياتي والدنيا كلها 💗✨"
-            </p>
-            <div class="service-button">
-                <a href="scrn.html">screenshots 💗✨</a>
-            </div>
-        </section>
-        <section id="about">
-            <h2>Read this:</h2>
-            <p>
-هلو هلوووووو، 
+    <!-- Interactive Buttons -->
+    <button onclick="showMessage('اولاً احببكككككككك، وثانياً يارب تعجبك الفكرة')">اضغطيني بس 🙂</button>
+    <button onclick="showMessage('كللللل شي ولما اقول كل شي ف يعني كل شي حرفياً وما دخلك، حنيتك طيبتك، ضحكتك, صوتك، شخصيتك كل شيييي')">تبي تعرف ايش الجميل فيك؟</button>
+    <button onclick="showMessage('بتعرفي، اكثر شي ابيه والله انك تكوني فرحانة وما تفكري ف ايييي شي يضايقك وتكوني دايماً كذا تضحكي ضحكتك الحلوة ديك،   ومهما سويتي لي وانتي متاضيقه اي كلام بتقوليه انا مسامحك فيه وما بيهمني')">افتحي الصندوق دا ( مو صندوق بس افتحيه )</button>
+    <button onclick="showMessage('جربي كذا تضغطي النجوم')">لعبه بسيطه كزا   💗</button>
+    <button onclick="showMessage('اولا: تكوني فرحانة دايمااااًً، ثانياً: انه نفضل مع بعض داايمااااا واقفين مع بعض وما يبعدنا شي يارببب')">امنيتي </button>
+    <button onclick="showMessage('احبببككككككككككككك يا حمارهه')">اضغطي ...</button>
+    <button onclick="sis()">كلام كزا يفرحك شوي</button>
 
-بقلك يعني شوفي بكثر الاشياء الي انت عايشاها الحين انها صعبه عارف والله ومو عارف انا اساعدك كثير يعني شي بيقهر برضو انك انتي عايشة دي الاشياء وحتى ما بتحكي ايش الي بيضايقك وانا بكون مو عارف اعمل شي بس بحاول برضو اخليك تنسي او نا تفكري بالموضوع على الاقل او احاول اضحكك بيكون احسن 
-بس برضو انتي قوية حتى برغم الي يحصلك لسك برضو طيبة☺️☺️☺️ ومو باردة ابداًّ☺️☺️ وبريئة برضو..، 
-بس استحملي ان شاء الله هي كم يوم ايام وبتعدي ان شاء الله مهما كان الي حاصلك ان شاء الله ، وبتيد وبعيد وبعيد اقلك اني دايماً بكون موجودلك هنا ف اي وقت ممكن اوقات ما اقدر اردلك بس والله غصب عني حتى لما اكون ماسك اللابتوب وانتي ترسلي بقفله واجي اكلمك لاني برضو واعدك اني بضل معاك وما بتركك زي ما الباقيين سوو وبثبتلك كذا وبتشوفي لما نصير عجايز ولسة بنتكلم😂 ان شاء الله ، 
-بس والله ابي اساعدك واطلع من الي انتي فيه باي طريقة بس لو انتي بتحكيلي ايش حاصل صدقيني بسوي كللل شي بقدر عليه عشان انسيك او اخليك ما تفكري واطلع الموضوع من عقلك حتى والله،  بحس بغصصصههه لما ما اقدر اسوي شي وانتي تكوني مكسورة وشي مضايقك او لو شحص سوالك شي زي ما كان يوم ديك الهوشة قعدت يوم احاول اجيب طريقة ابند بيها الحسابات وزعلت والله اني ما قدرت الاقي طريقة للحين لاني جد والله ابي اساعدك والي يزعلك يزعلني بس ما قدرت القاييهاااااا، 
-بس على الي بيحصل الحين دا انتي اقوا من انك تستلمي للي بيحصلك الحين تمام يا عسل 🍯،
-حلو الايموجي ...
-وعلى مرضك انا دايما. بضب ادعيلك ويارب يقبل دعائي يارببب والله لما القاك مرضك بيزيد بحس بطعنه كذا وعارف كلامي دا ممكن يكون كرنج بس دي حقايق ايش اقول يعني، 
-وبعدين انسانه زيك كذا جميلة وحنونة وكل شي حلو في الدنيا فيك تكون زعلتنه كذا ما يرضيني،  
-المهم يا حلوة ما تستسلمي وانا دايماً بضل جنبك واقيف معاك في اي ظرف وبوفي بوعدي تمام
-لانك برضو دايما بتقيفي معاي ولما افضفض تسمعيلي وما حصل زعلنا من بعض ولا شي زي كذا والله مكانتك عندي كبيرة اكبر من الي ممكن تتخيليه وبتفضل وبتكبر كل يوم وبضل مااك دايماً نزعل مع بعض نضحك نفرح مع بعض كل شي والله ما ابي الا انك تكوني مبسوطة وسعيدة ومرضك يروح او ياخي يخف على الاقل يارببب بس💗
-💗💗
-<br>
-احبككككككگ💗💗
-            </p>
-            <center><button id="sis" onclick="sis()">Click me 💗</button></center>
-    </div>
-</body>
-<script>
-function sis() {
-	alert("💗💗 احبككككككگ احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗 احبككككككگ💗💗")
+    <div class="footer-text">woeoororooooooooooooooooo</div>
+
+    <script>
+        // Show a message when a button is clicked
+        function showMessage(message) {
+            alert(message);
+        }
+       // List of words for star alerts
+       const words = ["احبببككككككككككككك ", "يا حمارهه", "واثق فيك يا عسل", "اتفائلي شوي عشاني ولكككك", "انتي اقوى من كل شي ومن كل ظرف تمام يا حلوه", "هوهوهوهوهوهو", "خليكي عارفه اني راح اكون معاك دايماااااااا"];
+
+// Function to generate random positions
+function getRandomPosition() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    return {
+        x: Math.floor(Math.random() * width),
+        y: Math.floor(Math.random() * height),
+    };
 }
-</script>
+
+// Function to create stars
+function createStars(count) {
+    for (let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.textContent = '⭐';
+        const { x, y } = getRandomPosition();
+        star.style.left = `${x}px`;
+        star.style.top = `${y}px`;
+
+        // Add click event to the star
+        star.addEventListener('click', () => {
+            const randomWord = words[Math.floor(Math.random() * words.length)];
+            alert(randomWord);
+        });
+
+        document.body.appendChild(star);
+    }
+}
+
+// Generate 100 stars
+createStars(50); 
+
+function sis() {
+    window.open("https://shaheen101sec.github.io/my-sister/fad.html")
+}
+    </script>
+</body>
 </html>
