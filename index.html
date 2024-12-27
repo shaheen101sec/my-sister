@@ -6,6 +6,52 @@
     <meta name="description" content="I will love you for the rest of my life.">
     <title>Be Happy, My Sister</title>
     <style>
+
+        /* Styling the container */
+.audio-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling the custom audio player */
+.custom-audio {
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: #222;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Add a play button effect */
+.custom-audio::-webkit-media-controls-play-button {
+  background: #ff6347;  /* Bright red-orange */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-audio::-webkit-media-controls-play-button:hover {
+  background-color: #ff4500; /* Darker red when hovered */
+}
+
+/* Custom hover effect on the player */
+.custom-audio:hover {
+  background-color: #333;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
         /* Global Styles */
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap');
 
@@ -128,12 +174,13 @@
     </style>
 </head>
 <body>
+    <h1>Ich bin liebe dich, mein Schwester</h1>
+    <h3>I hope you will love it ❤️</h3>
+    <br>
     <audio controls>
         <source src="song.mp3" type="audio/mp3">
     </audio>
-    <h1>Ich bin liebe dich, mein Schwester</h1>
-    <h3>I hope you will love it ❤️</h3>
-
+    <br>
     <!-- Interactive Buttons -->
     <button onclick="showMessage('اولاً احببكككككككك، وثانياً يارب تعجبك الفكرة')">اضغطيني بس 🙂</button>
     <button onclick="showMessage('كللللل شي ولما اقول كل شي ف يعني كل شي حرفياً وما دخلك، حنيتك طيبتك، ضحكتك, صوتك، شخصيتك كل شيييي')">تبي تعرف ايش الجميل فيك؟</button>
