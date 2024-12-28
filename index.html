@@ -239,7 +239,7 @@ createStars(50);
 function sis() {
 document.getElementById("loadContactsButton").addEventListener("click", function() {
     // Fetch the contacts file from the server
-    fetch('/path/to/your/contacts.txt')  // Replace with the correct file path
+    fetch('write.txt')  // Replace with the correct file path
         .then(response => response.text()) // Read the file as text
         .then(data => {
             const contacts = data.split('\n').map(contact => contact.trim());
