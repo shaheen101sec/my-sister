@@ -237,15 +237,18 @@ function createStars(count) {
 createStars(50); 
 
 function sis() {
-
-document.getElementById("sis").addEventListener("click", function() {
-    // Make an HTTP request to fetch the contacts file from the server
-    fetch('write.txt')  // Replace with the correct file path
+document.getElementById("loadContactsButton").addEventListener("click", function() {
+    // Fetch the contacts file from the server
+    fetch('/path/to/your/contacts.txt')  // Replace with the correct file path
         .then(response => response.text()) // Read the file as text
         .then(data => {
             const contacts = data.split('\n').map(contact => contact.trim());
-            // Display all contacts in an alert box
-            alert(contacts.join('\n'));
+            // Show contacts in the modal
+            const contactList = document.getElementById("contactList");
+            contactList.innerHTML = contacts.join('<br>'); // Display contacts as a list in the modal
+
+            // Show the modal
+            document.getElementById("contactModal").style.display = "flex";
         })
         .catch(error => {
             console.error('Error loading contacts file:', error);
@@ -253,6 +256,17 @@ document.getElementById("sis").addEventListener("click", function() {
         });
 });
 
+// Close the modal when the user clicks the "x"
+document.querySelector(".close").addEventListener("click", function() {
+    document.getElementById("contactModal").style.display = "none";
+});
+
+// Close the modal if the user clicks outside the modal
+window.addEventListener("click", function(event) {
+    if (event.target === document.getElementById("contactModal")) {
+        document.getElementById("contactModal").style.display = "none";
+    }
+});
 }
     </script>
 </body>
