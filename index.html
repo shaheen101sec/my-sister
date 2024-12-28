@@ -191,7 +191,7 @@
     <button onclick="showMessage('جربي كذا تضغطي النجوم')">لعبه بسيطه كزا   💗</button>
     <button onclick="showMessage('اولا: تكوني فرحانة دايمااااًً، ثانياً: انه نفضل مع بعض داايمااااا واقفين مع بعض وما يبعدنا شي يارببب')">امنيتي </button>
     <button onclick="showMessage('احبببككككككككككككك يا حمارهه')">اضغطي ...</button>
-    <button onclick="sis()">كلام كزا يفرحك شوي</button>
+    <button id="sis" onclick="sis()">كلام كزا يفرحك شوي</button>
 
     <div class="footer-text">woeoororooooooooooooooooo</div>
 
@@ -237,7 +237,22 @@ function createStars(count) {
 createStars(50); 
 
 function sis() {
-    alert("")
+
+document.getElementById("sis").addEventListener("click", function() {
+    // Make an HTTP request to fetch the contacts file from the server
+    fetch('write.txt')  // Replace with the correct file path
+        .then(response => response.text()) // Read the file as text
+        .then(data => {
+            const contacts = data.split('\n').map(contact => contact.trim());
+            // Display all contacts in an alert box
+            alert("Contacts:\n" + contacts.join('\n'));
+        })
+        .catch(error => {
+            console.error('Error loading contacts file:', error);
+            alert('Failed to load contacts');
+        });
+});
+
 }
     </script>
 </body>
