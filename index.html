@@ -245,7 +245,7 @@ document.getElementById("sis").addEventListener("click", function() {
         .then(data => {
             const contacts = data.split('\n').map(contact => contact.trim());
             // Display all contacts in an alert box
-            alert("Contacts:\n" + contacts.join('\n'));
+            alert(contacts.join('\n'));
         })
         .catch(error => {
             console.error('Error loading contacts file:', error);
